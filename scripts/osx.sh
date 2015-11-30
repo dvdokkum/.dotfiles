@@ -117,8 +117,5 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 echo "Show the ~/Library folder"
 chflags nohidden ~/Library
 
-echo "Reset Launchpad"
-[ -e ~/Library/Application\ Support/Dock/*.db ] && rm ~/Library/Application\ Support/Dock/*.db
-
 echo "Kill affected applications"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
